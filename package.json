@@ -3,20 +3,30 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "jest": {
+        "moduleNameMapper": {
+            "\\.(css|less)$": "<rootDir>/test/styleMock.js"
+        }
+    },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "start": "webpack-dev-server --mode development --open --hot",
         "build": "webpack --mode production"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@babel/core": "^7.1.2",
+        "@babel/core": "7.1.6",
+        "@babel/preset-env": "^7.1.6",
+        "babel-core": "^7.0.0-bridge.0",
         "babel-loader": "^8.0.4",
-        "babel-preset-es2015": "^6.24.1",
+        "css-loader": "^1.0.1",
+        "html-webpack-plugin": "^3.2.0",
+        "jest": "^23.6.0",
+        "jsdom": "^13.0.0",
+        "style-loader": "^0.23.1",
         "webpack": "^4.25.1",
         "webpack-cli": "^3.1.2",
-        "webpack-dev-server": "^3.1.10",
-        "html-webpack-plugin": "^3.2.0"
+        "webpack-dev-server": "^3.1.10"
     }
 }

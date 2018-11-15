@@ -7,3 +7,6 @@ npm install
 
 run app:
 npm start
+
+run tests:
+npm run test -- --watch
