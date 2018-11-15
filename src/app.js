@@ -29,9 +29,10 @@ function getPath(arrayOfChars) {
     function recursiveSearch(currentState) {
         const {lastLine, lastDirection, lastPosition} = currentState;
         let {accumulatedPath} = currentState;
-        const lineIndexInArray = arrayOfChars.findIndex((line) => arraysEqual(line, lastLine));
 
-        if (lastLine[lastPosition] === 'x') return accumulatedPath;
+        if (lastLine[lastPosition] === 'x') { return accumulatedPath; }
+
+        const lineIndexInArray = arrayOfChars.findIndex((line) => arraysEqual(line, lastLine));
 
         if ((lastDirection === DIRECTIONS.TO_BOTTOM || (lastDirection === DIRECTIONS.TO_LEFT && notExistsLeft(lastLine, lastPosition)) || (lastDirection === DIRECTIONS.TO_RIGHT && notExistsRight(lastLine, lastPosition)))
             && lastDirection !== DIRECTIONS.TO_UP && existsAtPosition(arrayOfChars[lineIndexInArray + 1], lastPosition)) {
