@@ -16,12 +16,12 @@ function getPath(arrayOfLines) {
 
     let direction;
 
-    if (existsRight(firstLine, startingCharIndex)) {
+    if (existsAtPosition(arrayOfLines[startingLineIndex + 1], startingCharIndex)) {
+        direction = DIRECTIONS.TO_BOTTOM;
+    } else if (existsRight(firstLine, startingCharIndex)) {
         direction = DIRECTIONS.TO_RIGHT;
     } else if (existsLeft(firstLine, startingCharIndex)) {
         direction = DIRECTIONS.TO_LEFT;
-    } else if (existsAtPosition(arrayOfLines[startingLineIndex + 1], startingCharIndex)) {
-        direction = DIRECTIONS.TO_BOTTOM;
     }
 
     return recursiveSearch({lastLine: firstLine, lastDirection: direction, lastPosition: startingCharIndex, accumulatedPath: '@'}).trim();

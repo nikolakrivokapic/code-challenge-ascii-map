@@ -57,3 +57,11 @@ export const MAP_5 = '\n' + `
   +   |   |
       +---+
     ` + '\n';
+
+export const MAP_6 = '\n' + `  
+++@
+  +       x
+  +-B-+   C
+      |   |
+      +---+
+    ` + '\n';

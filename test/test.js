@@ -1,4 +1,4 @@
-import {TEST_HTML, MAP_1, MAP_2, MAP_3, MAP_4, MAP_5} from './constants.js';
+import {TEST_HTML, MAP_1, MAP_2, MAP_3, MAP_4, MAP_5, MAP_6} from './constants.js';
 
 test('calculate paths', () => {
     document.body.innerHTML = TEST_HTML;
@@ -34,4 +34,9 @@ test('calculate paths', () => {
     $button.click();
     expect($result.innerHTML).toEqual('@-A--+|C|+---+|+-B-x');
     expect($resultLetters.innerHTML).toEqual('ACB');
+
+    $textArea.innerHTML = MAP_6;
+    $button.click();
+    expect($result.innerHTML).toEqual('@++-B-+|+---+|Cx');
+    expect($resultLetters.innerHTML).toEqual('BC');
 });
